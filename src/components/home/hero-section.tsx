@@ -1,10 +1,22 @@
 'use client';
 
+import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'motion/react';
+import { useMouseVector } from '@/hooks/use-mouse-vector';
 
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+  const { position } = useMouseVector(sectionRef);
+
+  // Normalize mouse position to [-1, 1] range for parallax
+  const parallaxX = typeof window !== 'undefined'
+    ? ((position.x / window.innerWidth) * 2 - 1) * 12
+    : 0;
+  const parallaxY = typeof window !== 'undefined'
+    ? ((position.y / window.innerHeight) * 2 - 1) * 8
+    : 0;
 
   const duration = prefersReducedMotion ? 0 : 0.6;
   const fadeUp = (delay: number) => ({
@@ -14,11 +26,19 @@ export function HeroSection() {
   });
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center">
       {/* Background gradient */}
       <div className="hero-gradient absolute inset-0 z-0" aria-hidden="true" />
-      {/* Radial glow */}
-      <div className="hero-glow absolute inset-0 z-0" aria-hidden="true" />
+      {/* Radial glow — parallax on mouse */}
+      <div
+        className="hero-glow absolute inset-0 z-0 transition-transform duration-300 ease-out"
+        style={
+          prefersReducedMotion
+            ? undefined
+            : { transform: `translate(${parallaxX}px, ${parallaxY}px)` }
+        }
+        aria-hidden="true"
+      />
 
       {/* Content */}
       <div className="relative z-10 max-w-[800px] text-center px-4 py-24 md:py-[96px]">
