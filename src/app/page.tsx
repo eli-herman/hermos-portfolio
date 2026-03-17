@@ -1,15 +1,16 @@
+import { HeroSection } from '@/components/home/hero-section';
+import { QuickProjectGrid } from '@/components/home/quick-project-grid';
+import { AudienceAccessPoints } from '@/components/home/audience-access-points';
+import { ContactSection } from '@/components/shared/contact-section';
 import { PageTransition } from '@/components/layout/page-transition';
-import { SectionHeading } from '@/components/shared/section-heading';
 
 export default function HomePage() {
   return (
     <PageTransition>
-      <div className="min-h-screen pt-24 px-4 md:px-6 mx-auto max-w-[1200px]">
-        <SectionHeading
-          title="Home"
-          subtitle="Content coming in Plan 02"
-        />
-      </div>
+      <HeroSection />
+      <QuickProjectGrid />
+      <AudienceAccessPoints />
+      <ContactSection />
     </PageTransition>
   );
 }
