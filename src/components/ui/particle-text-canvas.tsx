@@ -110,9 +110,9 @@ export default function ParticleText({
 
       // Use accent color gradient
       const gradient = ctx.createLinearGradient(0, textY - activeFontSize, canvas.width, textY + activeFontSize)
-      gradient.addColorStop(0, "#C9A84C") // accent
-      gradient.addColorStop(0.5, "#F0D080") // lighter accent
-      gradient.addColorStop(1, "#C9A84C") // accent
+      gradient.addColorStop(0, "#E8971A") // accent
+      gradient.addColorStop(0.5, "#F5C060") // lighter accent
+      gradient.addColorStop(1, "#E8971A") // accent
       ctx.fillStyle = gradient
       ctx.fillText(text, textX, textY)
 

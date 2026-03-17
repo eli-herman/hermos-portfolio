@@ -12,11 +12,11 @@ interface WaveLayer {
 }
 
 const WAVES: WaveLayer[] = [
-  { phase: 0,              amplitude: 80, frequency: 0.0018, speed: 1.0, color: '#C9A84C', opacity: 0.16 },
-  { phase: Math.PI * 0.5,  amplitude: 55, frequency: 0.0026, speed: 0.7, color: '#F0D080', opacity: 0.12 },
-  { phase: Math.PI * 1.0,  amplitude: 95, frequency: 0.0013, speed: 1.3, color: '#B8963E', opacity: 0.09 },
-  { phase: Math.PI * 1.5,  amplitude: 45, frequency: 0.0031, speed: 0.9, color: '#E8C86A', opacity: 0.06 },
-  { phase: Math.PI * 0.3,  amplitude: 65, frequency: 0.0022, speed: 1.1, color: '#A07830', opacity: 0.05 },
+  { phase: 0,              amplitude: 80, frequency: 0.0018, speed: 1.0, color: '#E8971A', opacity: 0.16 },
+  { phase: Math.PI * 0.5,  amplitude: 55, frequency: 0.0026, speed: 0.7, color: '#F5C060', opacity: 0.12 },
+  { phase: Math.PI * 1.0,  amplitude: 95, frequency: 0.0013, speed: 1.3, color: '#B86C0A', opacity: 0.09 },
+  { phase: Math.PI * 1.5,  amplitude: 45, frequency: 0.0031, speed: 0.9, color: '#F0A830', opacity: 0.06 },
+  { phase: Math.PI * 0.3,  amplitude: 65, frequency: 0.0022, speed: 1.1, color: '#8C5005', opacity: 0.05 },
 ];
 
 export function WaveBackground() {

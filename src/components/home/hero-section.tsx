@@ -65,6 +65,12 @@ export function HeroSection() {
           <BackgroundGradientAnimation
             containerClassName="w-full h-full"
             interactive={false}
+            firstColor="232, 151, 26"
+            secondColor="180, 110, 10"
+            thirdColor="140, 80, 5"
+            fourthColor="20, 15, 5"
+            fifthColor="30, 20, 8"
+            pointerColor="245, 180, 80"
           />
         ) : (
           <div className="hero-gradient w-full h-full" />

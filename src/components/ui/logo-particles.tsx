@@ -67,7 +67,7 @@ export default function LogoParticles({
       ctx.textBaseline = "middle"
 
       // Draw text for sampling
-      ctx.fillStyle = "#C9A84C" // accent color
+      ctx.fillStyle = "#E8971A" // accent color
       ctx.fillText(text, displayWidth / 2, displayHeight / 2)
 
       textImageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
@@ -96,7 +96,7 @@ export default function LogoParticles({
             baseX: x,
             baseY: y,
             size: Math.random() * 1.8 + 0.4,
-            color: `rgba(201, 168, 76, ${Math.random() * 0.6 + 0.4})`, // accent with varying opacity
+            color: `rgba(232, 151, 26, ${Math.random() * 0.6 + 0.4})`, // accent with varying opacity
             scatteredColor: `rgba(250, 250, 250, ${Math.random() * 0.6 + 0.4})`, // foreground when scattered
             life: Math.random() * 150 + 50,
           }
