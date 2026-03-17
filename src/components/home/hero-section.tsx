@@ -10,6 +10,10 @@ const LogoParticles = dynamic(() => import('@/components/ui/logo-particles'), {
   ssr: false,
 });
 
+const ParticleTextCanvas = dynamic(() => import('@/components/ui/particle-text-canvas'), {
+  ssr: false,
+});
+
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
@@ -53,12 +57,29 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-[800px] text-center px-4 py-24 md:py-[96px]">
-        <motion.h1
-          className="text-foreground text-[32px] md:text-[48px] font-bold leading-[1.1] tracking-[-0.02em]"
-          {...fadeUp(0)}
-        >
-          The future, on demand.
-        </motion.h1>
+        {/* Particle text heading — visual layer */}
+        <motion.div className="relative" {...fadeUp(0)}>
+          {!prefersReducedMotion ? (
+            <div className="relative h-[48px] md:h-[64px]">
+              <div className="absolute inset-0">
+                <ParticleTextCanvas
+                  text="The future, on demand."
+                  fontSize={48}
+                  mobileFontSize={32}
+                  particleSize={1.2}
+                  particleGap={2}
+                  mouseRadius={100}
+                />
+              </div>
+              {/* Accessible h1 — visible only to screen readers when particle text is active */}
+              <h1 className="sr-only">The future, on demand.</h1>
+            </div>
+          ) : (
+            <h1 className="text-foreground text-[32px] md:text-[48px] font-bold leading-[1.1] tracking-[-0.02em]">
+              The future, on demand.
+            </h1>
+          )}
+        </motion.div>
 
         <motion.p
           className="text-muted text-base md:text-lg mt-6 max-w-[600px] mx-auto"
