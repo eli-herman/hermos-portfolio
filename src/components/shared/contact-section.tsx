@@ -37,7 +37,7 @@ export function ContactSection() {
           href={SOCIAL_LINKS.email}
           className="text-muted hover:text-accent transition-colors duration-200"
         >
-          eli@hermos.dev
+          hermos.dev@gmail.com
         </a>
       </p>
 
