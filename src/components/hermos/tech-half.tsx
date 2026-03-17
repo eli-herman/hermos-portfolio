@@ -10,6 +10,7 @@ import { SecurityBadge } from '@/components/hermos/security-badge';
 import { TechMarquee } from '@/components/hermos/tech-marquee';
 import { DiagramEmbed } from '@/components/shared/diagram-embed';
 import { WorkflowChartCard } from '@/components/hermos/workflow-chart-card';
+import { LocalModelCard } from '@/components/hermos/local-model-card';
 
 export function TechHalf() {
   const ref = useRef<HTMLDivElement>(null);
@@ -30,7 +31,7 @@ export function TechHalf() {
         <div className="mt-12">
           <BentoGrid>
             <WorkflowChartCard />
-            {STATS.filter((s) => s.label !== 'Automation workflows').map((stat) => (
+            {STATS.filter((s) => s.label !== 'Automation workflows' && s.label !== 'Parameter local model').map((stat) => (
               <StatCard
                 key={stat.label}
                 value={stat.value}
@@ -38,6 +39,7 @@ export function TechHalf() {
                 icon={stat.icon}
               />
             ))}
+            <LocalModelCard />
           </BentoGrid>
         </div>
 
