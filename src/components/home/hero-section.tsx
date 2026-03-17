@@ -1,31 +1,54 @@
 'use client';
 
-import { useRef } from 'react';
-import dynamic from 'next/dynamic';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'motion/react';
-import { useMouseVector } from '@/hooks/use-mouse-vector';
+import { MagneticButton } from '@/components/ui/magnetic-button';
+import { BackgroundGradientAnimation } from './background-gradient-animation';
 
-const LogoParticles = dynamic(() => import('@/components/ui/logo-particles'), {
-  ssr: false,
-});
+const PHRASES = [
+  'The future, on demand.',
+  'AI infrastructure, built for one.',
+  'Ship in days. Not months.',
+];
 
-const ParticleTextCanvas = dynamic(() => import('@/components/ui/particle-text-canvas'), {
-  ssr: false,
-});
+function TypewriterHeading({ reduced }: { reduced: boolean | null }) {
+  const [idx, setIdx] = useState(0);
+  const [text, setText] = useState('');
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    if (reduced) {
+      setText(PHRASES[0]);
+      return;
+    }
+    const phrase = PHRASES[idx];
+    if (!deleting && text === phrase) {
+      const t = setTimeout(() => setDeleting(true), 2400);
+      return () => clearTimeout(t);
+    }
+    if (deleting && text === '') {
+      setDeleting(false);
+      setIdx((i) => (i + 1) % PHRASES.length);
+      return;
+    }
+    const speed = deleting ? 32 : 95;
+    const t = setTimeout(() => {
+      setText(deleting ? phrase.slice(0, text.length - 1) : phrase.slice(0, text.length + 1));
+    }, speed);
+    return () => clearTimeout(t);
+  }, [text, deleting, idx, reduced]);
+
+  return (
+    <h1 className="text-[32px] md:text-[56px] font-bold leading-[1.1] tracking-[-0.03em] text-transparent bg-clip-text bg-gradient-to-br from-foreground via-blue-200 to-accent min-h-[1.2em]">
+      {text}
+      {!reduced && <span className="text-accent animate-pulse ml-0.5">|</span>}
+    </h1>
+  );
+}
 
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
-  const sectionRef = useRef<HTMLElement>(null);
-  const { position } = useMouseVector(sectionRef);
-
-  // Normalize mouse position to [-1, 1] range for parallax
-  const parallaxX = typeof window !== 'undefined'
-    ? ((position.x / window.innerWidth) * 2 - 1) * 12
-    : 0;
-  const parallaxY = typeof window !== 'undefined'
-    ? ((position.y / window.innerHeight) * 2 - 1) * 8
-    : 0;
 
   const duration = prefersReducedMotion ? 0 : 0.6;
   const fadeUp = (delay: number) => ({
@@ -35,76 +58,51 @@ export function HeroSection() {
   });
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center">
-      {/* Background gradient */}
-      <div className="hero-gradient absolute inset-0 z-0" aria-hidden="true" />
-      {/* Radial glow — parallax on mouse */}
-      <div
-        className="hero-glow absolute inset-0 z-0 transition-transform duration-300 ease-out"
-        style={
-          prefersReducedMotion
-            ? undefined
-            : { transform: `translate(${parallaxX}px, ${parallaxY}px)` }
-        }
-        aria-hidden="true"
-      />
-      {/* Particle initials background */}
-      {!prefersReducedMotion && (
-        <div className="absolute inset-0 z-[1] opacity-20 pointer-events-none" aria-hidden="true">
-          <LogoParticles text="EH" particleCount={2000} fontSize={280} mobileFontSize={140} />
-        </div>
-      )}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 z-0" aria-hidden="true">
+        {!prefersReducedMotion ? (
+          <BackgroundGradientAnimation
+            containerClassName="w-full h-full"
+            interactive={false}
+          />
+        ) : (
+          <div className="hero-gradient w-full h-full" />
+        )}
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-[800px] text-center px-4 py-24 md:py-[96px]">
-        {/* Particle text heading — visual layer */}
-        <motion.div className="relative" {...fadeUp(0)}>
-          {!prefersReducedMotion ? (
-            <div className="relative h-[48px] md:h-[64px]">
-              <div className="absolute inset-0">
-                <ParticleTextCanvas
-                  text="The future, on demand."
-                  fontSize={48}
-                  mobileFontSize={32}
-                  particleSize={1.2}
-                  particleGap={2}
-                  mouseRadius={100}
-                />
-              </div>
-              {/* Accessible h1 — visible only to screen readers when particle text is active */}
-              <h1 className="sr-only">The future, on demand.</h1>
-            </div>
-          ) : (
-            <h1 className="text-foreground text-[32px] md:text-[48px] font-bold leading-[1.1] tracking-[-0.02em]">
-              The future, on demand.
-            </h1>
-          )}
+        <motion.div {...fadeUp(0)}>
+          <TypewriterHeading reduced={prefersReducedMotion} />
         </motion.div>
 
         <motion.p
           className="text-muted text-base md:text-lg mt-6 max-w-[600px] mx-auto"
-          {...fadeUp(0.1)}
+          {...fadeUp(0.15)}
         >
           I build AI infrastructure that gives one person the output of an
           engineering team. Then I build it for you.
         </motion.p>
 
-        <motion.div
-          className="flex gap-4 justify-center mt-8"
-          {...fadeUp(0.2)}
-        >
-          <Link
-            href="#contact"
-            className="inline-flex items-center justify-center rounded-lg bg-accent hover:bg-accent-hover text-foreground text-sm font-medium min-h-[44px] px-6 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
-            Let&apos;s talk
-          </Link>
-          <Link
-            href="/hermos"
-            className="inline-flex items-center justify-center rounded-lg border border-border bg-transparent text-foreground hover:bg-card text-sm font-medium min-h-[44px] px-6 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
-            See my work
-          </Link>
+        <motion.div className="flex gap-3 justify-center mt-10" {...fadeUp(0.25)}>
+          <MagneticButton>
+            <Link
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-full min-h-[48px] px-8 text-sm font-semibold text-white bg-gradient-to-r from-accent to-blue-400 hover:from-blue-400 hover:to-accent transition-all duration-300 shadow-[0_0_24px_rgba(59,130,246,0.35)] hover:shadow-[0_0_36px_rgba(59,130,246,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              Let&apos;s talk
+            </Link>
+          </MagneticButton>
+
+          <MagneticButton>
+            <Link
+              href="/hermos"
+              className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-foreground hover:bg-white/10 hover:border-white/25 text-sm font-medium min-h-[48px] px-8 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              See my work
+            </Link>
+          </MagneticButton>
         </motion.div>
       </div>
     </section>

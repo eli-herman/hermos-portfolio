@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useState, useCallback } from 'react';
+import { useRef, useEffect, useState, useCallback, useMemo } from 'react';
 import { motion, useInView } from 'motion/react';
 import { Database, Workflow, Wrench, Globe, Cpu, type LucideIcon } from 'lucide-react';
 
@@ -38,7 +38,7 @@ function easeOutCubic(t: number): number {
 export function StatCard({ value, label, icon }: StatCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '0px 0px -40px 0px' });
-  const parsed = parseNumericValue(value);
+  const parsed = useMemo(() => parseNumericValue(value), [value]);
   const [displayValue, setDisplayValue] = useState(() =>
     parsed ? '0' + parsed.suffix : value
   );
@@ -80,12 +80,13 @@ export function StatCard({ value, label, icon }: StatCardProps) {
   const IconComponent = icon ? ICON_MAP[icon] : null;
 
   return (
+    <div className="stat-card-wrap">
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.6 }}
-      className="rounded-lg border border-border bg-card hover:bg-card-hover transition-colors duration-150 p-6"
+      className="rounded-lg bg-card hover:bg-card-hover transition-colors duration-150 p-6"
     >
       {IconComponent && (
         <IconComponent className="mb-3 text-muted-foreground" size={20} />
@@ -97,5 +98,6 @@ export function StatCard({ value, label, icon }: StatCardProps) {
         {label}
       </div>
     </motion.div>
+    </div>
   );
 }

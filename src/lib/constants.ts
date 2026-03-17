@@ -126,3 +126,26 @@ export const SKILLS = [
   { category: 'AI/ML', items: ['Ollama', 'ChromaDB', 'Mem0', 'MCP Protocol'] },
   { category: 'DevOps', items: ['GitHub Actions', 'SOPS/age', 'Trivy', 'Semgrep', 'Datadog'] },
 ] as const;
+
+export const SKILL_DESCRIPTIONS: Record<string, string> = {
+  TypeScript:        'Primary language across all Hermos infrastructure, MCP server, and portfolio.',
+  Python:            'Automation scripts, mem0 server, data pipelines, and AI tool integrations.',
+  JavaScript:        'n8n workflow logic, Windows service wrappers, and utility scripts.',
+  'React Native':    'UI layer for The Vine — family genealogy app built with Expo.',
+  'Next.js':         'Framework powering this portfolio site with static generation and App Router.',
+  Express:           'REST API backing the Quality Server — routes AI generation and vector search requests.',
+  NativeWind:        'Tailwind CSS for React Native. Design tokens and spacing system for The Vine.',
+  Docker:            'Container runtime for ChromaDB, Quality Server, and Caddy on the Windows home server.',
+  'Cloudflare Tunnel':'Zero-trust public access to all 7 services — no port forwarding, works on any network.',
+  n8n:               '29 automation workflows: memory sync, GitHub backups, health monitoring, alerts.',
+  pm2:               'Process manager keeping 8 Windows services alive across reboots.',
+  Ollama:            'Local LLM runtime — 7B on Mac, 14B on Windows GPU. Powers code generation and review.',
+  ChromaDB:          'Vector database storing 13,659 documents across 6 knowledge domains.',
+  Mem0:              'Persistent AI memory layer — stores facts across sessions for context continuity.',
+  'MCP Protocol':    '27 custom tools bridging Claude Code to local models, ChromaDB, n8n, and vision APIs.',
+  'GitHub Actions':  'CI/CD pipeline for automated testing, security scans, and Vercel deployments.',
+  'SOPS/age':        'All credentials encrypted at rest — age key pair, zero plaintext secrets anywhere.',
+  Trivy:             'Container image vulnerability scanner integrated into the security audit pipeline.',
+  Semgrep:           'Static analysis with custom rules — part of the 9-phase security assessment.',
+  Datadog:           'Infrastructure monitoring with GPU metrics, process tracking, and custom dashboards.',
+};

@@ -7,8 +7,9 @@ import { SectionHeading } from '@/components/shared/section-heading';
 import { StatCard } from '@/components/hermos/stat-card';
 import { BentoGrid } from '@/components/hermos/bento-grid';
 import { SecurityBadge } from '@/components/hermos/security-badge';
-import { StackList } from '@/components/hermos/stack-list';
+import { TechMarquee } from '@/components/hermos/tech-marquee';
 import { DiagramEmbed } from '@/components/shared/diagram-embed';
+import { WorkflowChartCard } from '@/components/hermos/workflow-chart-card';
 
 export function TechHalf() {
   const ref = useRef<HTMLDivElement>(null);
@@ -28,7 +29,8 @@ export function TechHalf() {
 
         <div className="mt-12">
           <BentoGrid>
-            {STATS.map((stat) => (
+            <WorkflowChartCard />
+            {STATS.filter((s) => s.label !== 'Automation workflows').map((stat) => (
               <StatCard
                 key={stat.label}
                 value={stat.value}
@@ -54,7 +56,7 @@ export function TechHalf() {
         <div className="mt-12">
           <SectionHeading title="Stack" />
           <div className="mt-8">
-            <StackList />
+            <TechMarquee />
           </div>
         </div>
       </div>

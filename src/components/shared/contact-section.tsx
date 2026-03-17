@@ -1,8 +1,9 @@
 'use client';
 
 import { motion, useReducedMotion } from 'motion/react';
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import { SOCIAL_LINKS } from '@/lib/constants';
+import { Button3D } from '@/components/ui/button-3d';
 
 export function ContactSection() {
   const prefersReducedMotion = useReducedMotion();
@@ -25,16 +26,13 @@ export function ContactSection() {
         just want to talk shop -- I&apos;m one message away.
       </p>
 
-      <a
-        href={SOCIAL_LINKS.email}
-        className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-foreground text-sm font-medium min-h-[44px] px-6 rounded-lg mt-8 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      >
-        <Mail className="h-4 w-4" />
-        Send a message
-      </a>
+      <div className="mt-8 flex justify-center">
+        <Button3D href={SOCIAL_LINKS.email}>
+          Let&apos;s talk
+        </Button3D>
+      </div>
 
       <p className="text-muted-foreground text-sm mt-4">
-        Or email directly:{' '}
         <a
           href={SOCIAL_LINKS.email}
           className="text-muted hover:text-accent transition-colors duration-200"

@@ -4,7 +4,6 @@ import { JetBrains_Mono } from 'next/font/google';
 import { SmoothScroll } from '@/components/layout/smooth-scroll';
 import { SiteHeader } from '@/components/layout/site-header';
 import { SiteFooter } from '@/components/layout/site-footer';
-import { FloatingDock } from '@/components/layout/floating-dock';
 import './globals.css';
 
 const jetbrainsMono = JetBrains_Mono({
@@ -32,7 +31,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SiteHeader />
           <main id="main-content">{children}</main>
           <SiteFooter />
-          <FloatingDock />
         </SmoothScroll>
       </body>
     </html>

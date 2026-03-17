@@ -26,12 +26,14 @@ function ProjectCard({
 }) {
   return (
     <Card
-      className={`bg-card hover:bg-card-hover border border-border transition-colors duration-150 h-full ${
-        featured ? 'border-l-2 border-l-accent' : ''
+      className={`group bg-card hover:bg-card-hover border border-border hover:border-accent/40 transition-all duration-200 h-full hover:-translate-y-0.5 ${
+        featured
+          ? 'border-l-2 border-l-accent shadow-[0_0_0_0_rgba(59,130,246,0)] hover:shadow-[0_4px_24px_rgba(59,130,246,0.12)]'
+          : 'hover:shadow-[0_4px_16px_rgba(0,0,0,0.4)]'
       }`}
     >
       <CardHeader>
-        <CardTitle className="text-foreground text-xl font-bold">
+        <CardTitle className="text-foreground text-xl font-bold group-hover:text-accent transition-colors duration-200">
           {name}
         </CardTitle>
         <p className="text-muted text-sm font-mono">{tagline}</p>
