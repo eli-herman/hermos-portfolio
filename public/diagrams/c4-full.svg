@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 720" width="920" height="720">
+  <defs>
+    <style>
+      .title { fill: #FAFAFA; font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: 700; }
+      .device-label { fill: #FAFAFA; font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; }
+      .container-name { fill: #FAFAFA; font-family: system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; }
+      .container-port { fill: #666666; font-family: system-ui, -apple-system, sans-serif; font-size: 10px; }
+      .container-desc { fill: #A0A0A0; font-family: system-ui, -apple-system, sans-serif; font-size: 9px; }
+      .runtime-tag { fill: #666666; font-family: system-ui, -apple-system, sans-serif; font-size: 8px; font-style: italic; }
+      .external-name { fill: #FAFAFA; font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-weight: 600; }
+      .external-desc { fill: #A0A0A0; font-family: system-ui, -apple-system, sans-serif; font-size: 9px; }
+      .arrow-label { fill: #3B82F6; font-family: system-ui, -apple-system, sans-serif; font-size: 8px; }
+      .section-label { fill: #666666; font-family: system-ui, -apple-system, sans-serif; font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+      .placeholder-note { fill: #666666; font-family: system-ui, -apple-system, sans-serif; font-size: 10px; font-style: italic; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3B82F6"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="920" height="720" fill="#0A0A0A"/>
+
+  <!-- Title -->
+  <text x="460" y="30" text-anchor="middle" class="title">Hermos Platform -- Container Diagram</text>
+
+  <!-- ==================== MAC DEVICE GROUP ==================== -->
+  <rect x="20" y="50" width="280" height="310" rx="8" fill="none" stroke="#333333" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="35" y="70" class="device-label">MacBook Pro</text>
+
+  <!-- Mac: Claude Code -->
+  <rect x="40" y="85" width="240" height="55" rx="6" fill="#141414" stroke="#262626" stroke-width="1.5"/>
+  <text x="55" y="105" class="container-name">Claude Code</text>
+  <text x="55" y="118" class="container-desc">CLI development interface</text>
+  <text x="55" y="130" class="container-port">Primary user entrypoint</text>
+
+  <!-- Mac: MCP Server -->
+  <rect x="40" y="155" width="240" height="55" rx="6" fill="#141414" stroke="#262626" stroke-width="1.5"/>
+  <text x="55" y="175" class="container-name">MCP Server</text>
+  <text x="230" y="175" class="container-port">stdio</text>
+  <text x="55" y="188" class="container-desc">27 tools -- bridge to all services</text>
+  <text x="55" y="200" class="runtime-tag">Node.js</text>
+
+  <!-- Mac: Ollama 7b -->
+  <rect x="40" y="225" width="240" height="55" rx="6" fill="#141414" stroke="#262626" stroke-width="1.5"/>
+  <text x="55" y="245" class="container-name">Ollama</text>
+  <text x="230" y="245" class="container-port">:11434</text>
+  <text x="55" y="258" class="container-desc">qwen2.5-coder:7b -- local fallback</text>
+  <text x="55" y="270" class="runtime-tag">Native</text>
+
+  <!-- Mac: internal arrow Claude Code -> MCP -->
+  <line x1="160" y1="140" x2="160" y2="155" stroke="#3B82F6" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- ==================== WINDOWS DEVICE GROUP ==================== -->
+  <rect x="340" y="50" width="560" height="520" rx="8" fill="none" stroke="#333333" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="355" y="70" class="device-label">Windows PC (100.84.195.93)</text>
+
+  <!-- Docker sub-label -->
+  <text x="360" y="90" class="section-label">Docker (WSL2 Ubuntu)</text>
+
+  <!-- Win Docker: Quality Server -->
+  <rect x="360" y="100" width="165" height="55" rx="6" fill="#141414" stroke="#262626" stroke-width="1.5"/>
+  <text x="375" y="118" class="container-name">Quality Server</text>
+  <text x="495" y="118" class="container-port">:4000</text>
+  <text x="375" y="131" class="container-desc">Ollama + ChromaDB API</text>
+  <text x="375" y="143" class="runtime-tag">Docker</text>
+
+  <!-- Win Docker: ChromaDB -->
+  <rect x="540" y="100" width="165" height="55" rx="6" fill="#141414" stroke="#262626" stroke-width="1.5"/>
+  <text x="555" y="118" class="container-name">ChromaDB</text>
+  <text x="675" y="118" class="container-port">:8000</text>
+  <text x="555" y="131" class="container-desc">Vector DB, 13,659 docs</text>
+  <text x="555" y="143" class="runtime-tag">Docker -- E:\chromadb-data NVMe</text>
+
+  <!-- Win Docker: Caddy -->
+  <rect x="720" y="100" width="165" height="55" rx="6" fill="#141414" stroke="#262626" stroke-width="1.5"/>
+  <text x="735" y="118" class="container-name">Caddy</text>
+  <text x="855" y="118" class="container-port">:9443</text>
+  <text x="735" y="131" class="container-desc">Reverse proxy</text>
+  <text x="735" y="143" class="runtime-tag">Docker</text>
+
+  <!-- pm2 sub-label -->
+  <text x="360" y="180" class="section-label">Native / pm2</text>
+
+  <!-- Win Native: Ollama 14b -->
+  <rect x="360" y="190" width="165" height="55" rx="6" fill="#141414" stroke="#262626" stroke-width="1.5"/>
+  <text x="375" y="208" class="container-name">Ollama</text>
+  <text x="495" y="208" class="container-port">:11434</text>
+  <text x="375" y="221" class="container-desc">14B model, RTX 4060 Ti</text>
+  <text x="375" y="233" class="runtime-tag">Native -- qwen2.5-coder:14b</text>
+
+  <!-- Win pm2: n8n -->
+  <rect x="540" y="190" width="165" height="55" rx="6" fill="#141414" stroke="#262626" stroke-width="1.5"/>
+  <text x="555" y="208" class="container-name">n8n</text>
+  <text x="675" y="208" class="container-port">:5680</text>
+  <text x="555" y="221" class="container-desc">29 workflows, 9 prefixes</text>
+  <text x="555" y="233" class="runtime-tag">pm2</text>
+
+  <!-- Win pm2: Mem0 -->
+  <rect x="720" y="190" width="165" height="55" rx="6" fill="#141414" stroke="#262626" stroke-width="1.5"/>
+  <text x="735" y="208" class="container-name">Mem0</text>
+  <text x="855" y="208" class="container-port">:8010</text>
+  <text x="735" y="221" class="container-desc">Long-term memory</text>
+  <text x="735" y="233" class="runtime-tag">pm2 -- qwen2.5:3b</text>
+
+  <!-- Win pm2: Windows Claude Bridge -->
+  <rect x="360" y="260" width="165" height="55" rx="6" fill="#141414" stroke="#262626" stroke-width="1.5"/>
+  <text x="375" y="278" class="container-name">Claude Bridge</text>
+  <text x="495" y="278" class="container-port">:3200</text>
+  <text x="375" y="291" class="container-desc">Agent SDK bridge</text>
+  <text x="375" y="303" class="runtime-tag">pm2</text>
+
+  <!-- ==================== DATA FLOW ARROWS ==================== -->
+
+  <!-- Mac MCP -> Quality Server (generate, search, embed) -->
+  <line x1="280" y1="182" x2="360" y2="127" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="290" y="148" class="arrow-label">generate, search, embed</text>
+
+  <!-- QS -> ChromaDB -->
+  <line x1="525" y1="127" x2="540" y2="127" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="528" y="122" class="arrow-label">vectors</text>
+
+  <!-- QS -> Ollama 14b -->
+  <line x1="442" y1="155" x2="442" y2="190" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="448" y="176" class="arrow-label">inference</text>
+
+  <!-- Mem0 -> ChromaDB -->
+  <line x1="720" y1="215" x2="705" y2="155" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="710" y="183" class="arrow-label">mem0 collection</text>
+
+  <!-- n8n -> Claude Bridge -->
+  <line x1="540" y1="245" x2="525" y2="275" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="530" y="262" class="arrow-label">tasks</text>
+
+  <!-- Mac -> Windows SSH -->
+  <line x1="280" y1="310" x2="360" y2="310" stroke="#3B82F6" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <text x="290" y="326" class="arrow-label">SSH (CF Tunnel)</text>
+
+  <!-- ==================== EXTERNAL SERVICES ==================== -->
+  <text x="460" y="590" text-anchor="middle" class="section-label">External Services</text>
+
+  <!-- Cloudflare Tunnel -->
+  <rect x="20" y="600" width="160" height="50" rx="6" fill="#1A1A2E" stroke="#262626" stroke-width="1.5"/>
+  <text x="35" y="620" class="external-name">Cloudflare Tunnel</text>
+  <text x="35" y="637" class="external-desc">7 HTTPS endpoints</text>
+
+  <!-- Tailscale -->
+  <rect x="200" y="600" width="140" height="50" rx="6" fill="#1A1A2E" stroke="#262626" stroke-width="1.5"/>
+  <text x="215" y="620" class="external-name">Tailscale</text>
+  <text x="215" y="637" class="external-desc">Encrypted LAN</text>
+
+  <!-- GitHub -->
+  <rect x="360" y="600" width="140" height="50" rx="6" fill="#1A1A2E" stroke="#262626" stroke-width="1.5"/>
+  <text x="375" y="620" class="external-name">GitHub</text>
+  <text x="375" y="637" class="external-desc">Actions + CI</text>
+
+  <!-- Datadog -->
+  <rect x="520" y="600" width="140" height="50" rx="6" fill="#1A1A2E" stroke="#262626" stroke-width="1.5"/>
+  <text x="535" y="620" class="external-name">Datadog</text>
+  <text x="535" y="637" class="external-desc">Monitoring + GPU</text>
+
+  <!-- Vercel -->
+  <rect x="680" y="600" width="140" height="50" rx="6" fill="#1A1A2E" stroke="#262626" stroke-width="1.5"/>
+  <text x="695" y="620" class="external-name">Vercel</text>
+  <text x="695" y="637" class="external-desc">Telegram relay</text>
+
+  <!-- CF Tunnel arrow up -->
+  <line x1="100" y1="600" x2="100" y2="570" stroke="#3B82F6" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <text x="108" y="585" class="arrow-label">HTTPS endpoints</text>
+
+  <!-- GitHub arrow up -->
+  <line x1="430" y1="600" x2="430" y2="570" stroke="#3B82F6" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <text x="438" y="585" class="arrow-label">security scans</text>
+
+  <!-- Datadog arrow up -->
+  <line x1="590" y1="600" x2="590" y2="570" stroke="#3B82F6" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+  <text x="598" y="585" class="arrow-label">metrics + APM</text>
+
+  <!-- Placeholder note -->
+  <text x="460" y="700" text-anchor="middle" class="placeholder-note">Placeholder -- build final version in Excalidraw, export as SVG</text>
+</svg>
