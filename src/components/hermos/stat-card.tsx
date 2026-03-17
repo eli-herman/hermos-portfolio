@@ -37,9 +37,11 @@ function easeOutCubic(t: number): number {
 
 export function StatCard({ value, label, icon }: StatCardProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
-  const [displayValue, setDisplayValue] = useState('0');
+  const isInView = useInView(ref, { once: true, margin: '0px 0px -40px 0px' });
   const parsed = parseNumericValue(value);
+  const [displayValue, setDisplayValue] = useState(() =>
+    parsed ? '0' + parsed.suffix : value
+  );
 
   const animate = useCallback(() => {
     if (!parsed) {
@@ -47,7 +49,7 @@ export function StatCard({ value, label, icon }: StatCardProps) {
       return;
     }
 
-    const duration = 1200;
+    const duration = 800;
     const startTime = performance.now();
 
     function tick(now: number) {
