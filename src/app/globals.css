@@ -56,16 +56,16 @@
   --secondary-foreground: #FAFAFA;
   --muted: #A0A0A0;
   --muted-foreground: #666666;
-  --accent: #3B82F6;
-  --accent-foreground: #FAFAFA;
-  --accent-hover: #2563EB;
-  --accent-subtle: rgba(59, 130, 246, 0.1);
+  --accent: #C9A84C;
+  --accent-foreground: #0A0A0A;
+  --accent-hover: #B8963E;
+  --accent-subtle: rgba(201, 168, 76, 0.1);
   --destructive: #EF4444;
   --success: #22C55E;
   --warning: #F59E0B;
   --border: #262626;
   --input: #262626;
-  --ring: #3B82F6;
+  --ring: #C9A84C;
   --radius: 0.5rem;
 
   /* Font families */
@@ -106,7 +106,7 @@
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.875rem;
   color: rgba(250, 250, 250, 0.7);
-  background: rgba(59, 130, 246, 0.08);
+  background: rgba(201, 168, 76, 0.08);
   border: 1px solid #262626;
   padding: 0.25rem 0.5rem;
   border-radius: 0.375rem;
@@ -122,8 +122,8 @@
     conic-gradient(
       from var(--tag-angle),
       transparent 20%,
-      #3B82F6 50%,
-      #93C5FD 60%,
+      #C9A84C 50%,
+      #F0D080 60%,
       transparent 80%
     ) border-box;
   animation: tag-border-spin 3s linear infinite;
@@ -151,8 +151,8 @@
   background: conic-gradient(
     from var(--card-angle),
     transparent 20%,
-    #3B82F6 50%,
-    #93C5FD 62%,
+    #C9A84C 50%,
+    #F0D080 62%,
     transparent 80%
   );
   animation: card-border-spin 4s linear infinite;
@@ -212,5 +212,5 @@
 }
 
 .hero-glow {
-  background: radial-gradient(ellipse at 50% 0%, rgba(59, 130, 246, 0.14) 0%, transparent 65%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(201, 168, 76, 0.12) 0%, transparent 65%);
 }
