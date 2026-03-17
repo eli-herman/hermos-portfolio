@@ -15,7 +15,7 @@ export function LocalModelCard() {
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6 }}
-        className="rounded-lg bg-card hover:bg-card-hover transition-colors duration-150 p-5 flex flex-col gap-4"
+        className="rounded-lg bg-card hover:bg-card-hover transition-colors duration-150 p-5 flex flex-col gap-4 overflow-hidden"
       >
         {/* Force the SVG into its natural 2:1 aspect ratio so it renders properly */}
         <div className="w-full" style={{ aspectRatio: '2 / 1' }}>

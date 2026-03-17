@@ -6,7 +6,7 @@ interface BentoGridProps {
 
 export function BentoGrid({ children }: BentoGridProps) {
   return (
-    <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+    <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 items-start">
       {React.Children.map(children, (child, index) => {
         if (index === 0 && React.isValidElement(child)) {
           return (
