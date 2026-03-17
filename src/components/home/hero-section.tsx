@@ -1,0 +1,60 @@
+'use client';
+
+import Link from 'next/link';
+import { motion, useReducedMotion } from 'motion/react';
+
+export function HeroSection() {
+  const prefersReducedMotion = useReducedMotion();
+
+  const duration = prefersReducedMotion ? 0 : 0.6;
+  const fadeUp = (delay: number) => ({
+    initial: prefersReducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration, delay: prefersReducedMotion ? 0 : delay },
+  });
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center">
+      {/* Background gradient */}
+      <div className="hero-gradient absolute inset-0 z-0" aria-hidden="true" />
+      {/* Radial glow */}
+      <div className="hero-glow absolute inset-0 z-0" aria-hidden="true" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-[800px] text-center px-4 py-24 md:py-[96px]">
+        <motion.h1
+          className="text-foreground text-[32px] md:text-[48px] font-bold leading-[1.1] tracking-[-0.02em]"
+          {...fadeUp(0)}
+        >
+          The future, on demand.
+        </motion.h1>
+
+        <motion.p
+          className="text-muted text-base md:text-lg mt-6 max-w-[600px] mx-auto"
+          {...fadeUp(0.1)}
+        >
+          I build AI infrastructure that gives one person the output of an
+          engineering team. Then I build it for you.
+        </motion.p>
+
+        <motion.div
+          className="flex gap-4 justify-center mt-8"
+          {...fadeUp(0.2)}
+        >
+          <Link
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-lg bg-accent hover:bg-accent-hover text-foreground text-sm font-medium min-h-[44px] px-6 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            Let&apos;s talk
+          </Link>
+          <Link
+            href="/hermos"
+            className="inline-flex items-center justify-center rounded-lg border border-border bg-transparent text-foreground hover:bg-card text-sm font-medium min-h-[44px] px-6 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            See my work
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
