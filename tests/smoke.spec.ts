@@ -1,22 +1,22 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Smoke Tests', () => {
-  test.skip('home page loads', async ({ page }) => {
+  test('home page loads', async ({ page }) => {
     await page.goto('/');
     await expect(page).toHaveTitle(/Eli Herman/);
   });
 
-  test.skip('hermos page loads', async ({ page }) => {
+  test('hermos page loads', async ({ page }) => {
     await page.goto('/hermos');
     await expect(page).toHaveTitle(/Hermos/);
   });
 
-  test.skip('about page loads', async ({ page }) => {
+  test('about page loads', async ({ page }) => {
     await page.goto('/about');
     await expect(page).toHaveTitle(/About/);
   });
 
-  test.skip('navigation links work', async ({ page }) => {
+  test('navigation links work', async ({ page }) => {
     await page.goto('/');
     await page.click('a[href="/hermos"]');
     await expect(page).toHaveURL(/hermos/);
@@ -26,7 +26,7 @@ test.describe('Smoke Tests', () => {
     await expect(page).toHaveURL(/\/$/);
   });
 
-  test.skip('contact section exists', async ({ page }) => {
+  test('contact section exists', async ({ page }) => {
     await page.goto('/');
     const contact = page.locator('#contact');
     await expect(contact).toBeVisible();
