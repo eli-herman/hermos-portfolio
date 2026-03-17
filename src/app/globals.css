@@ -56,10 +56,15 @@
   --secondary-foreground: #FAFAFA;
   --muted: #A0A0A0;
   --muted-foreground: #666666;
-  --accent: #E8971A;
+  --accent: #D4921A;
   --accent-foreground: #0A0A0A;
-  --accent-hover: #D4860E;
-  --accent-subtle: rgba(232, 151, 26, 0.1);
+  --accent-hover: #B8790E;
+  --accent-subtle: rgba(212, 146, 26, 0.1);
+  /* Gold palette sampled from brand image */
+  --gold-bright: #EABD70;
+  --gold-mid: #D4921A;
+  --gold-dark: #7E4F10;
+  --gold-shadow: #3D2808;
   --destructive: #EF4444;
   --success: #22C55E;
   --warning: #F59E0B;

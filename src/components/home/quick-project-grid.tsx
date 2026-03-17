@@ -28,7 +28,7 @@ function ProjectCard({
     <Card
       className={`group bg-card hover:bg-card-hover border border-border hover:border-accent/40 transition-all duration-200 h-full hover:-translate-y-0.5 ${
         featured
-          ? 'border-l-2 border-l-accent shadow-[0_0_0_0_rgba(59,130,246,0)] hover:shadow-[0_4px_24px_rgba(59,130,246,0.12)]'
+          ? 'border-l-2 border-l-accent shadow-[0_0_0_0_rgba(212,146,26,0)] hover:shadow-[0_4px_24px_rgba(212,146,26,0.15)]'
           : 'hover:shadow-[0_4px_16px_rgba(0,0,0,0.4)]'
       }`}
     >
