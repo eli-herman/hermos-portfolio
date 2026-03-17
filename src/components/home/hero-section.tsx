@@ -1,9 +1,14 @@
 'use client';
 
 import { useRef } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'motion/react';
 import { useMouseVector } from '@/hooks/use-mouse-vector';
+
+const LogoParticles = dynamic(() => import('@/components/ui/logo-particles'), {
+  ssr: false,
+});
 
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
@@ -39,6 +44,12 @@ export function HeroSection() {
         }
         aria-hidden="true"
       />
+      {/* Particle initials background */}
+      {!prefersReducedMotion && (
+        <div className="absolute inset-0 z-[1] opacity-20 pointer-events-none" aria-hidden="true">
+          <LogoParticles text="EH" particleCount={2000} fontSize={280} mobileFontSize={140} />
+        </div>
+      )}
 
       {/* Content */}
       <div className="relative z-10 max-w-[800px] text-center px-4 py-24 md:py-[96px]">
