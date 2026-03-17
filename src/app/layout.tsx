@@ -4,6 +4,7 @@ import { JetBrains_Mono } from 'next/font/google';
 import { SmoothScroll } from '@/components/layout/smooth-scroll';
 import { SiteHeader } from '@/components/layout/site-header';
 import { SiteFooter } from '@/components/layout/site-footer';
+import { TooltipProvider } from '@/components/ui/tooltip';
 import './globals.css';
 
 const jetbrainsMono = JetBrains_Mono({
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${GeistSans.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <body className="bg-background text-muted antialiased">
+        <TooltipProvider delay={200} closeDelay={100}>
         <SmoothScroll>
           <a
             href="#main-content"
@@ -32,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main id="main-content">{children}</main>
           <SiteFooter />
         </SmoothScroll>
+        </TooltipProvider>
       </body>
     </html>
   );
