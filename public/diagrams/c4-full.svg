@@ -1,28 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 700" width="1060" height="700">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 620" width="1080" height="620">
   <defs>
     <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <polygon points="0 0, 8 3, 0 6" fill="#D4921A"/>
     </marker>
-    <marker id="arr-dash" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-      <polygon points="0 0, 8 3, 0 6" fill="#5A6480"/>
+    <marker id="arr-dim" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#5A6480"/>
     </marker>
   </defs>
 
   <!-- Background -->
-  <rect width="1060" height="700" fill="#0C1020"/>
+  <rect width="1080" height="620" fill="#0C1020"/>
 
   <!-- Header -->
   <text x="48" y="44" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="20" font-weight="700" fill="#FAFAFA" letter-spacing="-0.3">Hermos Platform — Container Diagram</text>
   <text x="48" y="63" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" fill="#5A6480">C4 Level 2 — All containers across Mac and Windows devices</text>
-  <line x1="48" y1="76" x2="1012" y2="76" stroke="#1E2438" stroke-width="1"/>
+  <line x1="48" y1="76" x2="1032" y2="76" stroke="#1E2438" stroke-width="1"/>
 
   <!-- ══════════════════════════════════════════════════════════════ -->
-  <!-- MAC DEVICE GROUP: x=24, y=88, w=300, h=320                  -->
+  <!-- MAC DEVICE GROUP: x=24, y=88, w=300, h=300                  -->
   <!-- ══════════════════════════════════════════════════════════════ -->
-  <rect x="24" y="88" width="300" height="320" rx="8" fill="none" stroke="#1E2438" stroke-width="1.5" stroke-dasharray="8,5"/>
-  <!-- Gold top accent bar -->
+  <rect x="24" y="88" width="300" height="300" rx="8" fill="none" stroke="#1E2438" stroke-width="1.5" stroke-dasharray="8,5"/>
   <rect x="24" y="88" width="300" height="3" rx="1.5" fill="#D4921A"/>
-  <!-- Device label -->
   <text x="40" y="112" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="13" font-weight="600" fill="#FAFAFA">MacBook Pro</text>
   <text x="40" y="128" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480">Apple Silicon · Claude Code CLI</text>
 
@@ -32,168 +30,155 @@
   <text x="56" y="179" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">CLI development interface</text>
   <text x="56" y="195" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Primary user entrypoint</text>
 
-  <!-- Arrow: Claude Code → MCP -->
-  <line x1="174" y1="206" x2="174" y2="218" stroke="#D4921A" stroke-width="1" marker-end="url(#arr)"/>
+  <!-- Claude Code → MCP arrow -->
+  <line x1="174" y1="206" x2="174" y2="219" stroke="#D4921A" stroke-width="1" marker-end="url(#arr)"/>
 
   <!-- Mac: MCP Server -->
-  <rect x="40" y="218" width="268" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <text x="56" y="241" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">MCP Server</text>
-  <text x="266" y="241" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">stdio</text>
-  <text x="56" y="257" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">27 tools — bridge to all services</text>
-  <text x="56" y="272" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Node.js · TypeScript</text>
+  <rect x="40" y="219" width="268" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <text x="56" y="242" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">MCP Server</text>
+  <text x="296" y="242" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">stdio</text>
+  <text x="56" y="258" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">27 tools — bridge to all services</text>
+  <text x="56" y="273" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Node.js · TypeScript</text>
 
-  <!-- Arrow: MCP → Ollama 7b -->
-  <line x1="174" y1="284" x2="174" y2="296" stroke="#D4921A" stroke-width="1" marker-end="url(#arr)"/>
+  <!-- MCP → Ollama 7b arrow -->
+  <line x1="174" y1="285" x2="174" y2="298" stroke="#D4921A" stroke-width="1" marker-end="url(#arr)"/>
 
   <!-- Mac: Ollama 7b -->
-  <rect x="40" y="296" width="268" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <text x="56" y="319" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">Ollama</text>
-  <text x="266" y="319" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:11434</text>
-  <text x="56" y="335" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">qwen2.5-coder:7b — local fallback</text>
-  <text x="56" y="350" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Native</text>
+  <rect x="40" y="298" width="268" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <text x="56" y="321" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">Ollama</text>
+  <text x="296" y="321" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:11434</text>
+  <text x="56" y="337" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">qwen2.5-coder:7b — local fallback</text>
+  <text x="56" y="352" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Native</text>
 
   <!-- ══════════════════════════════════════════════════════════════ -->
-  <!-- WINDOWS DEVICE GROUP: x=344, y=88, w=692, h=380             -->
+  <!-- WINDOWS DEVICE GROUP: x=344, y=88, w=712, h=380             -->
   <!-- ══════════════════════════════════════════════════════════════ -->
-  <rect x="344" y="88" width="692" height="380" rx="8" fill="none" stroke="#1E2438" stroke-width="1.5" stroke-dasharray="8,5"/>
-  <!-- Gold top accent bar -->
-  <rect x="344" y="88" width="692" height="3" rx="1.5" fill="#D4921A"/>
-  <!-- Device label -->
+  <rect x="344" y="88" width="712" height="380" rx="8" fill="none" stroke="#1E2438" stroke-width="1.5" stroke-dasharray="8,5"/>
+  <rect x="344" y="88" width="712" height="3" rx="1.5" fill="#D4921A"/>
   <text x="360" y="112" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="13" font-weight="600" fill="#FAFAFA">Windows PC</text>
   <text x="360" y="128" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480">100.84.195.93 · RTX 4060 Ti 8GB</text>
 
   <!-- Docker section label -->
-  <text x="360" y="150" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" font-weight="600" fill="#D4921A" letter-spacing="1">DOCKER (WSL2 UBUNTU)</text>
+  <text x="360" y="152" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" font-weight="600" fill="#D4921A" letter-spacing="1">DOCKER (WSL2 UBUNTU)</text>
 
-  <!-- Win Docker: Quality Server (x=360, y=160, w=216) -->
-  <rect x="360" y="160" width="216" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <text x="376" y="183" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">Quality Server</text>
-  <text x="564" y="183" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:4000</text>
-  <text x="376" y="199" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Ollama + ChromaDB API</text>
-  <text x="376" y="214" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Docker</text>
+  <!-- Win Docker: Quality Server (x=360, w=222) -->
+  <rect x="360" y="162" width="222" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <text x="376" y="185" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">Quality Server</text>
+  <text x="570" y="185" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:4000</text>
+  <text x="376" y="201" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Ollama + ChromaDB API</text>
+  <text x="376" y="216" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Docker</text>
 
-  <!-- Win Docker: ChromaDB (x=588, y=160, w=216) -->
-  <rect x="588" y="160" width="216" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <text x="604" y="183" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">ChromaDB</text>
-  <text x="792" y="183" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:8000</text>
-  <text x="604" y="199" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Vector DB · 13,659 docs</text>
-  <text x="604" y="214" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Docker · NVMe E:\chromadb-data</text>
+  <!-- Win Docker: ChromaDB (x=594, w=222) -->
+  <rect x="594" y="162" width="222" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <text x="610" y="185" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">ChromaDB</text>
+  <text x="804" y="185" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:8000</text>
+  <text x="610" y="201" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Vector DB · 13,659 docs</text>
+  <text x="610" y="216" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Docker · NVMe E:\chromadb-data</text>
 
-  <!-- Win Docker: Caddy (x=816, y=160, w=204) -->
-  <rect x="816" y="160" width="204" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <text x="832" y="183" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">Caddy</text>
-  <text x="1008" y="183" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:9443</text>
-  <text x="832" y="199" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Reverse proxy (Funnel TLS)</text>
-  <text x="832" y="214" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Docker</text>
+  <!-- Win Docker: Caddy (x=828, w=212) -->
+  <rect x="828" y="162" width="212" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <text x="844" y="185" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">Caddy</text>
+  <text x="1028" y="185" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:9443</text>
+  <text x="844" y="201" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Reverse proxy (Funnel TLS)</text>
+  <text x="844" y="216" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Docker</text>
 
-  <!-- pm2 section label -->
-  <text x="360" y="248" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" font-weight="600" fill="#D4921A" letter-spacing="1">NATIVE / PM2</text>
+  <!-- pm2 section label — placed well below Docker row -->
+  <text x="360" y="250" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" font-weight="600" fill="#D4921A" letter-spacing="1">NATIVE / PM2</text>
 
-  <!-- Win pm2: Ollama 14b (x=360, y=258, w=162) -->
-  <rect x="360" y="258" width="162" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <text x="376" y="280" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">Ollama</text>
-  <text x="510" y="280" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:11434</text>
-  <text x="376" y="296" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">14b · RTX 4060 Ti</text>
-  <text x="376" y="312" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Native · qwen2.5-coder:14b</text>
+  <!-- Win pm2: Ollama 14b (x=360, w=161) -->
+  <rect x="360" y="260" width="161" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <text x="376" y="283" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">Ollama</text>
+  <text x="509" y="283" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:11434</text>
+  <text x="376" y="299" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">14b · RTX 4060 Ti</text>
+  <text x="376" y="314" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Native · qwen2.5-coder:14b</text>
 
-  <!-- Win pm2: n8n (x=534, y=258, w=162) -->
-  <rect x="534" y="258" width="162" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <text x="550" y="280" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">n8n</text>
-  <text x="684" y="280" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:5680</text>
-  <text x="550" y="296" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">29 workflows · 9 prefixes</text>
-  <text x="550" y="312" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">pm2</text>
+  <!-- Win pm2: n8n (x=533, w=161) -->
+  <rect x="533" y="260" width="161" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <text x="549" y="283" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">n8n</text>
+  <text x="682" y="283" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:5680</text>
+  <text x="549" y="299" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">29 workflows · 9 prefixes</text>
+  <text x="549" y="314" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">pm2</text>
 
-  <!-- Win pm2: Mem0 (x=708, y=258, w=162) -->
-  <rect x="708" y="258" width="162" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <text x="724" y="280" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">Mem0</text>
-  <text x="858" y="280" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:8010</text>
-  <text x="724" y="296" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Semantic long-term memory</text>
-  <text x="724" y="312" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">pm2 · qwen2.5:3b</text>
+  <!-- Win pm2: Mem0 (x=706, w=161) -->
+  <rect x="706" y="260" width="161" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <text x="722" y="283" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">Mem0</text>
+  <text x="855" y="283" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:8010</text>
+  <text x="722" y="299" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Semantic long-term memory</text>
+  <text x="722" y="314" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">pm2 · qwen2.5:3b</text>
 
-  <!-- Win pm2: Claude Bridge (x=882, y=258, w=138) -->
-  <rect x="882" y="258" width="138" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <text x="898" y="280" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="#FAFAFA">Claude Bridge</text>
-  <text x="1008" y="280" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480" text-anchor="end">:3200</text>
-  <text x="898" y="296" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Agent SDK bridge</text>
-  <text x="898" y="312" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">pm2</text>
+  <!-- Win pm2: Claude Bridge (x=879, w=161) -->
+  <rect x="879" y="260" width="161" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <text x="895" y="280" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#FAFAFA">Claude Bridge</text>
+  <text x="895" y="296" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#5A6480">:3200</text>
+  <text x="895" y="311" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Agent SDK bridge</text>
+  <text x="895" y="323" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">pm2</text>
 
   <!-- ══════════════════════════════════════════════════════════════ -->
   <!-- DATA FLOW ARROWS                                              -->
   <!-- ══════════════════════════════════════════════════════════════ -->
 
-  <!-- Mac MCP Server → Windows Quality Server -->
-  <line x1="308" y1="251" x2="344" y2="202" stroke="#D4921A" stroke-width="1.5" marker-end="url(#arr)"/>
-  <text x="308" y="232" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#D4921A">generate · search · embed</text>
+  <!-- Mac MCP → Windows Quality Server (main cross-device flow) -->
+  <!-- MCP right edge: x=308, y=219+33=252. QS left: x=360, y=162+33=195 -->
+  <line x1="308" y1="252" x2="360" y2="195" stroke="#D4921A" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- Label positioned in the gap between groups, above pm2 section -->
+  <text x="314" y="208" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#D4921A">generate · search · embed</text>
 
-  <!-- QS → ChromaDB (internal) -->
-  <line x1="576" y1="193" x2="588" y2="193" stroke="#D4921A" stroke-width="1.5" marker-end="url(#arr)"/>
-  <text x="577" y="187" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="8" fill="#5A6480">vectors</text>
+  <!-- QS → ChromaDB (internal, no label) -->
+  <line x1="582" y1="195" x2="594" y2="195" stroke="#D4921A" stroke-width="1.5" marker-end="url(#arr)"/>
 
-  <!-- QS → Ollama 14b (inference) -->
-  <line x1="468" y1="226" x2="441" y2="258" stroke="#D4921A" stroke-width="1.5" marker-end="url(#arr)"/>
-  <text x="470" y="246" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="8" fill="#5A6480">inference</text>
+  <!-- QS → Ollama 14b (inference, no label) -->
+  <line x1="471" y1="228" x2="441" y2="260" stroke="#D4921A" stroke-width="1.5" marker-end="url(#arr)"/>
 
-  <!-- Mem0 → ChromaDB -->
-  <line x1="757" y1="258" x2="737" y2="226" stroke="#D4921A" stroke-width="1.5" marker-end="url(#arr)"/>
-  <text x="758" y="245" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="8" fill="#5A6480">mem0 collection</text>
+  <!-- Mem0 → ChromaDB (no label) -->
+  <line x1="757" y1="260" x2="737" y2="228" stroke="#D4921A" stroke-width="1.5" marker-end="url(#arr)"/>
 
-  <!-- Mac ↔ Windows SSH (dashed) -->
-  <line x1="324" y1="340" x2="344" y2="340" stroke="#5A6480" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr-dash)"/>
-  <text x="326" y="334" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="8" fill="#5A6480">SSH</text>
+  <!-- Mac Ollama → Windows (SSH, dashed, below both groups) -->
+  <line x1="308" y1="331" x2="344" y2="331" stroke="#5A6480" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr-dim)"/>
+  <text x="312" y="324" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="8" fill="#5A6480">SSH</text>
 
   <!-- ══════════════════════════════════════════════════════════════ -->
-  <!-- EXTERNAL SERVICES ROW: y=500                                 -->
+  <!-- EXTERNAL SERVICES ROW                                        -->
   <!-- ══════════════════════════════════════════════════════════════ -->
-  <text x="48" y="492" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" font-weight="600" fill="#5A6480" letter-spacing="1">EXTERNAL SERVICES</text>
 
-  <!-- Cloudflare Tunnel (x=48) -->
-  <rect x="48" y="500" width="186" height="64" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <rect x="48" y="500" width="186" height="3" rx="1.5" fill="rgba(212,146,26,0.4)"/>
+  <!-- Section label — clear vertical separation above boxes -->
+  <text x="48" y="490" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" font-weight="600" fill="#5A6480" letter-spacing="1">EXTERNAL SERVICES</text>
+
+  <!-- Cloudflare Tunnel (x=48, w=196) -->
+  <rect x="48" y="500" width="196" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <rect x="48" y="500" width="196" height="3" rx="1.5" fill="rgba(212,146,26,0.45)"/>
   <text x="64" y="522" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#FAFAFA">Cloudflare Tunnel</text>
-  <text x="64" y="539" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">7 permanent HTTPS endpoints</text>
-  <text x="64" y="555" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">*.dev-os.dev</text>
+  <text x="64" y="538" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">7 permanent HTTPS endpoints</text>
+  <text x="64" y="554" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">*.dev-os.dev</text>
 
-  <!-- Tailscale (x=246) -->
-  <rect x="246" y="500" width="168" height="64" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <rect x="246" y="500" width="168" height="3" rx="1.5" fill="rgba(212,146,26,0.4)"/>
-  <text x="262" y="522" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#FAFAFA">Tailscale</text>
-  <text x="262" y="539" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Encrypted LAN overlay</text>
-  <text x="262" y="555" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">100.x.x.x mesh</text>
+  <!-- Tailscale (x=256, w=196) -->
+  <rect x="256" y="500" width="196" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <rect x="256" y="500" width="196" height="3" rx="1.5" fill="rgba(212,146,26,0.45)"/>
+  <text x="272" y="522" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#FAFAFA">Tailscale</text>
+  <text x="272" y="538" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Encrypted LAN overlay</text>
+  <text x="272" y="554" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">100.x.x.x mesh</text>
 
-  <!-- GitHub (x=426) -->
-  <rect x="426" y="500" width="168" height="64" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <rect x="426" y="500" width="168" height="3" rx="1.5" fill="rgba(212,146,26,0.4)"/>
-  <text x="442" y="522" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#FAFAFA">GitHub</text>
-  <text x="442" y="539" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Actions CI / security scans</text>
-  <text x="442" y="555" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Semgrep · Trivy · TruffleHog</text>
+  <!-- GitHub (x=464, w=196) -->
+  <rect x="464" y="500" width="196" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <rect x="464" y="500" width="196" height="3" rx="1.5" fill="rgba(212,146,26,0.45)"/>
+  <text x="480" y="522" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#FAFAFA">GitHub</text>
+  <text x="480" y="538" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Actions CI / security scans</text>
+  <text x="480" y="554" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">Semgrep · Trivy · TruffleHog</text>
 
-  <!-- Datadog (x=606) -->
-  <rect x="606" y="500" width="168" height="64" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <rect x="606" y="500" width="168" height="3" rx="1.5" fill="rgba(212,146,26,0.4)"/>
-  <text x="622" y="522" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#FAFAFA">Datadog</text>
-  <text x="622" y="539" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Host metrics · GPU NVML · APM</text>
-  <text x="622" y="555" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">4 monitors + dd-trace</text>
+  <!-- Datadog (x=672, w=196) -->
+  <rect x="672" y="500" width="196" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <rect x="672" y="500" width="196" height="3" rx="1.5" fill="rgba(212,146,26,0.45)"/>
+  <text x="688" y="522" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#FAFAFA">Datadog</text>
+  <text x="688" y="538" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Host metrics · GPU NVML · APM</text>
+  <text x="688" y="554" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">4 monitors + dd-trace</text>
 
-  <!-- Vercel (x=786) -->
-  <rect x="786" y="500" width="168" height="64" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
-  <rect x="786" y="500" width="168" height="3" rx="1.5" fill="rgba(212,146,26,0.4)"/>
-  <text x="802" y="522" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#FAFAFA">Vercel</text>
-  <text x="802" y="539" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Telegram webhook relay</text>
-  <text x="802" y="555" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">devos-telegram-relay.vercel.app</text>
-
-  <!-- CF Tunnel arrow up (to Windows group bottom) -->
-  <line x1="141" y1="500" x2="141" y2="478" stroke="#5A6480" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr-dash)"/>
-  <text x="148" y="491" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="8" fill="#5A6480">7 endpoints</text>
-
-  <!-- GitHub arrow up -->
-  <line x1="510" y1="500" x2="510" y2="478" stroke="#5A6480" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr-dash)"/>
-  <text x="517" y="491" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="8" fill="#5A6480">security scans</text>
-
-  <!-- Datadog arrow up -->
-  <line x1="690" y1="500" x2="690" y2="478" stroke="#5A6480" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr-dash)"/>
-  <text x="697" y="491" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="8" fill="#5A6480">metrics · APM</text>
+  <!-- Vercel (x=880, w=196) -->
+  <rect x="880" y="500" width="196" height="66" rx="6" fill="#111827" stroke="#1E2438" stroke-width="1"/>
+  <rect x="880" y="500" width="196" height="3" rx="1.5" fill="rgba(212,146,26,0.45)"/>
+  <text x="896" y="522" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#FAFAFA">Vercel</text>
+  <text x="896" y="538" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10" fill="#A0A8BC">Telegram webhook relay</text>
+  <text x="896" y="554" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#5A6480">devos-telegram-relay.vercel.app</text>
 
   <!-- Footer -->
-  <line x1="48" y1="582" x2="1012" y2="582" stroke="#1E2438" stroke-width="1"/>
+  <line x1="48" y1="582" x2="1032" y2="582" stroke="#1E2438" stroke-width="1"/>
   <text x="48" y="598" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="11" fill="#5A6480">Mac: Claude Code · MCP Server (27 tools) · Ollama 7b  |  Windows: Quality Server · ChromaDB · n8n · Mem0 · Claude Bridge · Ollama 14b · Caddy</text>
 </svg>
