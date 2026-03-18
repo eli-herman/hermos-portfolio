@@ -26,7 +26,7 @@ const STRIDE = [
 // Real Phase 10 audit numbers: 59 findings (4C/18H/17M/20L). 45 fixed, 9 accepted risk, 5 deferred.
 const SEVERITY = [
   { label: 'Critical', color: 'bg-red-500',    remaining: 0, total: 4  },
-  { label: 'High',     color: 'bg-orange-400', remaining: 3, total: 18 },
+  { label: 'High',     color: 'bg-orange-400', remaining: 0, total: 18 },
   { label: 'Medium',   color: 'bg-yellow-400', remaining: 0, total: 17 },
   { label: 'Low',      color: 'bg-blue-400',   remaining: 0, total: 20 },
 ];

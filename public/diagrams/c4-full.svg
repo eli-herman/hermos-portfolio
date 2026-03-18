@@ -13,7 +13,7 @@
 
   <!-- Header -->
   <text x="48" y="44" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="20" font-weight="700" fill="#FAFAFA" letter-spacing="-0.3">Hermos Platform — Container Diagram</text>
-  <text x="48" y="63" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" fill="#5A6480">C4 Level 2 — All containers across Mac and Windows devices</text>
+  <text x="48" y="63" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12" fill="#5A6480">Container Architecture — All services across Mac and Windows devices</text>
   <line x1="48" y1="76" x2="1032" y2="76" stroke="#1E2438" stroke-width="1"/>
 
   <!-- ══════════════════════════════════════════════════════════════ -->
@@ -120,8 +120,6 @@
   <!-- Mac MCP → Windows Quality Server (main cross-device flow) -->
   <!-- MCP right edge: x=308, y=219+33=252. QS left: x=360, y=162+33=195 -->
   <line x1="308" y1="252" x2="360" y2="195" stroke="#D4921A" stroke-width="1.5" marker-end="url(#arr)"/>
-  <!-- Label positioned in the gap between groups, above pm2 section -->
-  <text x="314" y="208" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="9" fill="#D4921A">generate · search · embed</text>
 
   <!-- QS → ChromaDB (internal, no label) -->
   <line x1="582" y1="195" x2="594" y2="195" stroke="#D4921A" stroke-width="1.5" marker-end="url(#arr)"/>

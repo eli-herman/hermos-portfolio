@@ -66,7 +66,7 @@ export function TechHalf() {
           <DiagramEmbed
             src="/diagrams/c4-full.svg"
             alt="Hermos platform architecture - full container diagram"
-            caption="C4 Container Diagram - Full system topology"
+            caption="Container Architecture — Full system topology"
           />
         </div>
 

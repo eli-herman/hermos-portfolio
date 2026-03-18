@@ -10,7 +10,7 @@
 
   <!-- Header -->
   <text x="48" y="48" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="22" font-weight="700" fill="#FAFAFA" letter-spacing="-0.5">Hermos Platform</text>
-  <text x="48" y="68" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="13" fill="#5A6480">C4 Level 1 — Service Architecture Overview</text>
+  <text x="48" y="68" font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="13" fill="#5A6480">Service Architecture Overview</text>
   <line x1="48" y1="82" x2="692" y2="82" stroke="#1E2438" stroke-width="1"/>
 
   <!-- AI Layer (y=98) -->
