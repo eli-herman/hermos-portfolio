@@ -10,7 +10,10 @@ import { SecurityBadge } from '@/components/hermos/security-badge';
 import { TechMarquee } from '@/components/hermos/tech-marquee';
 import { DiagramEmbed } from '@/components/shared/diagram-embed';
 import { WorkflowChartCard } from '@/components/hermos/workflow-chart-card';
+import { AiToolsCard } from '@/components/hermos/ai-tools-card';
+import { TunnelCard } from '@/components/hermos/tunnel-card';
 import { LocalModelCard } from '@/components/hermos/local-model-card';
+import { FloatingBento } from '@/components/ui/floating-bento';
 
 export function TechHalf() {
   const ref = useRef<HTMLDivElement>(null);
@@ -30,16 +33,28 @@ export function TechHalf() {
 
         <div className="mt-12">
           <BentoGrid>
-            <WorkflowChartCard />
-            {STATS.filter((s) => s.label !== 'Automation workflows' && s.label !== 'Parameter local model').map((stat) => (
-              <StatCard
-                key={stat.label}
-                value={stat.value}
-                label={stat.label}
-                icon={stat.icon}
-              />
+            <FloatingBento className="h-full">
+              <WorkflowChartCard />
+            </FloatingBento>
+            {/* Documents indexed — plain stat, no bespoke visualization needed */}
+            {STATS.filter((s) => s.label === 'Documents indexed').map((stat) => (
+              <FloatingBento key={stat.label} className="h-full">
+                <StatCard
+                  value={stat.value}
+                  label={stat.label}
+                  icon={stat.icon}
+                />
+              </FloatingBento>
             ))}
-            <LocalModelCard />
+            <FloatingBento className="h-full">
+              <AiToolsCard />
+            </FloatingBento>
+            <FloatingBento className="h-full">
+              <TunnelCard />
+            </FloatingBento>
+            <FloatingBento className="h-full">
+              <LocalModelCard />
+            </FloatingBento>
           </BentoGrid>
         </div>
 

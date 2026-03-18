@@ -3,6 +3,7 @@
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
 import { DiagramEmbed } from '@/components/shared/diagram-embed';
+import { FloatingBento } from '@/components/ui/floating-bento';
 
 const SERVICE_TIERS = [
   {
@@ -60,17 +61,16 @@ export function ClientHalf() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-12">
           {SERVICE_TIERS.map((tier) => (
-            <div
-              key={tier.title}
-              className="bg-card border border-border rounded-lg p-6 hover:bg-card-hover transition-colors duration-150"
-            >
-              <h3 className="text-foreground font-semibold">
-                {tier.title}
-              </h3>
-              <p className="text-muted text-sm mt-2">
-                {tier.description}
-              </p>
-            </div>
+            <FloatingBento key={tier.title}>
+              <div className="bg-card border border-border rounded-lg p-6 hover:bg-card-hover transition-colors duration-150 h-full">
+                <h3 className="text-foreground font-semibold">
+                  {tier.title}
+                </h3>
+                <p className="text-muted text-sm mt-2">
+                  {tier.description}
+                </p>
+              </div>
+            </FloatingBento>
           ))}
         </div>
       </div>

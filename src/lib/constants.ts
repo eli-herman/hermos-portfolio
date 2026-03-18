@@ -98,12 +98,12 @@ export const SECURITY_AUDIT = {
   heading: 'Security-audited from day one',
   description: 'Professional 9-phase security assessment. STRIDE threat model. 5 automated scanners. OWASP Top 10 + SANS Top 25 manual review. Every critical finding fixed.',
   stats: [
-    { label: 'Assessment phases', value: '9' },
-    { label: 'Threat model', value: 'STRIDE' },
-    { label: 'Automated scanners', value: '5' },
-    { label: 'Manual review standards', value: 'OWASP + SANS' },
-    { label: 'Critical findings', value: 'All fixed' },
-    { label: 'Controls verified', value: '15' },
+    { label: 'Findings audited',       value: '59'         },
+    { label: 'Fixed',                  value: '45'         },
+    { label: 'Critical findings open', value: '0'          },
+    { label: 'Accepted risk',          value: '9'          },
+    { label: 'Automated scanners',     value: '5'          },
+    { label: 'Manual review',          value: 'OWASP + SANS' },
   ],
 } as const;
 

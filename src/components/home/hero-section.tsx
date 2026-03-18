@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, useReducedMotion } from 'motion/react';
 import { MagneticButton } from '@/components/ui/magnetic-button';
 import { BackgroundGradientAnimation } from './background-gradient-animation';
+import { WingsCanvas } from './wings-canvas';
 
 const PHRASES = [
   'The future, on demand.',
@@ -40,7 +41,7 @@ function TypewriterHeading({ reduced }: { reduced: boolean | null }) {
   }, [text, deleting, idx, reduced]);
 
   return (
-    <h1 className="text-[32px] md:text-[56px] font-bold leading-[1.1] tracking-[-0.03em] text-transparent bg-clip-text bg-gradient-to-br from-foreground via-[#EABD70] to-accent min-h-[1.2em]">
+    <h1 className="text-[32px] md:text-[56px] font-bold leading-[1.1] tracking-[-0.03em] text-transparent bg-clip-text bg-gradient-to-br from-foreground via-[#EABD70] to-accent min-h-[1.2em] drop-shadow-[0_2px_16px_rgba(8,13,26,0.9)]">
       {text}
       {!reduced && <span className="text-accent animate-pulse ml-0.5">|</span>}
     </h1>
@@ -64,6 +65,8 @@ export function HeroSection() {
         {!prefersReducedMotion ? (
           <BackgroundGradientAnimation
             containerClassName="w-full h-full"
+            gradientBackgroundStart="rgb(12, 16, 32)"
+            gradientBackgroundEnd="rgb(8, 13, 26)"
             interactive={false}
             firstColor="232, 151, 26"
             secondColor="180, 110, 10"
@@ -77,21 +80,32 @@ export function HeroSection() {
         )}
       </div>
 
+      {/* Wings — particle canvas, true transparency, no JPEG */}
+      <motion.div
+        className="absolute inset-0 z-[1] pointer-events-none"
+        aria-hidden="true"
+        initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.4, delay: 0.2 }}
+      >
+        <WingsCanvas />
+      </motion.div>
+
       {/* Content */}
-      <div className="relative z-10 max-w-[800px] text-center px-4 py-24 md:py-[96px]">
-        <motion.div {...fadeUp(0)}>
+      <div className="relative z-10 max-w-[800px] text-center px-4 pt-16 pb-24 md:pt-20 md:pb-[96px]">
+        <motion.div {...fadeUp(0.1)}>
           <TypewriterHeading reduced={prefersReducedMotion} />
         </motion.div>
 
         <motion.p
           className="text-muted text-base md:text-lg mt-6 max-w-[600px] mx-auto"
-          {...fadeUp(0.15)}
+          {...fadeUp(0.20)}
         >
           I build AI infrastructure that gives one person the output of an
           engineering team. Then I build it for you.
         </motion.p>
 
-        <motion.div className="flex gap-3 justify-center mt-10" {...fadeUp(0.25)}>
+        <motion.div className="flex gap-3 justify-center mt-10" {...fadeUp(0.30)}>
           <MagneticButton>
             <Link
               href="#contact"

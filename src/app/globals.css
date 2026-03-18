@@ -42,22 +42,22 @@
 }
 
 :root {
-  /* Core palette (dark-only site) */
-  --background: #0A0A0A;
+  /* Core palette (dark-only site) — navy matched to brand image background */
+  --background: #0C1020;
   --foreground: #FAFAFA;
-  --card: #141414;
+  --card: #111827;
   --card-foreground: #FAFAFA;
-  --card-hover: #1A1A1A;
-  --popover: #141414;
+  --card-hover: #172035;
+  --popover: #111827;
   --popover-foreground: #FAFAFA;
   --primary: #FAFAFA;
-  --primary-foreground: #0A0A0A;
-  --secondary: #1A1A1A;
+  --primary-foreground: #0C1020;
+  --secondary: #172035;
   --secondary-foreground: #FAFAFA;
-  --muted: #A0A0A0;
-  --muted-foreground: #666666;
+  --muted: #A0A8BC;
+  --muted-foreground: #5A6480;
   --accent: #D4921A;
-  --accent-foreground: #0A0A0A;
+  --accent-foreground: #0C1020;
   --accent-hover: #B8790E;
   --accent-subtle: rgba(212, 146, 26, 0.1);
   /* Gold palette sampled from brand image */
@@ -68,9 +68,9 @@
   --destructive: #EF4444;
   --success: #22C55E;
   --warning: #F59E0B;
-  --border: #262626;
-  --input: #262626;
-  --ring: #E8971A;
+  --border: #1E2438;
+  --input: #1E2438;
+  --ring: #D4921A;
   --radius: 0.5rem;
 
   /* Font families */
@@ -123,7 +123,7 @@
   color: #FAFAFA;
   border-color: transparent;
   background:
-    linear-gradient(#0A0A0A, #0A0A0A) padding-box,
+    linear-gradient(#0C1020, #0C1020) padding-box,
     conic-gradient(
       from var(--tag-angle),
       transparent 20%,
@@ -213,7 +213,7 @@
 
 /* Hero section gradients */
 .hero-gradient {
-  background: linear-gradient(180deg, #0A0A0A 0%, #050505 100%);
+  background: linear-gradient(180deg, #0C1020 0%, #080D1A 100%);
 }
 
 .hero-glow {
