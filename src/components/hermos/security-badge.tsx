@@ -7,11 +7,11 @@ import { SECURITY_AUDIT } from '@/lib/constants';
 import { FloatingBento } from '@/components/ui/floating-bento';
 
 const SCANNERS = [
-  { name: 'Semgrep',    pass: true },
-  { name: 'Trivy',      pass: true },
-  { name: 'CodeQL',     pass: true },
-  { name: 'ESLint Sec', pass: true },
-  { name: 'TypeScript', pass: true },
+  { name: 'Semgrep',     pass: true },
+  { name: 'Trivy',       pass: true },
+  { name: 'TruffleHog',  pass: true },
+  { name: 'ESLint Sec',  pass: true },
+  { name: 'OWASP DepChk', pass: true },
 ];
 
 const STRIDE = [
