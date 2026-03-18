@@ -7,8 +7,7 @@ interface DiagramEmbedProps {
 }
 
 export function DiagramEmbed({ src, alt, caption }: DiagramEmbedProps) {
-  // Diagrams are created in Plan 05. Until then, render a skeleton placeholder.
-  const diagramExists = false;
+  const diagramExists = true;
 
   return (
     <div className="relative w-full overflow-hidden rounded-lg border border-border bg-card">
