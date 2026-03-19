@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { JetBrains_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { SmoothScroll } from '@/components/layout/smooth-scroll';
 import { SiteHeader } from '@/components/layout/site-header';
 import { SiteFooter } from '@/components/layout/site-footer';
@@ -34,6 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main id="main-content">{children}</main>
           <SiteFooter />
         </SmoothScroll>
+        <Analytics />
+        <SpeedInsights />
         </TooltipProvider>
       </body>
     </html>
