@@ -9,6 +9,7 @@ import { BentoGrid } from '@/components/hermos/bento-grid';
 import { SecurityBadge } from '@/components/hermos/security-badge';
 import { TechMarquee } from '@/components/hermos/tech-marquee';
 import { DiagramEmbed } from '@/components/shared/diagram-embed';
+import { ContainerScroll } from '@/components/ui/container-scroll';
 import { WorkflowChartCard } from '@/components/hermos/workflow-chart-card';
 import { AiToolsCard } from '@/components/hermos/ai-tools-card';
 import { TunnelCard } from '@/components/hermos/tunnel-card';
@@ -62,12 +63,19 @@ export function TechHalf() {
           <SecurityBadge />
         </div>
 
-        <div className="mt-12">
-          <DiagramEmbed
-            src="/diagrams/c4-full.svg"
-            alt="Hermos platform architecture - full container diagram"
-            caption="Container Architecture — Full system topology"
-          />
+        <div className="mt-4">
+          <ContainerScroll
+            titleComponent={
+              <p className="text-sm text-muted-foreground font-mono">
+                Container Architecture — Full system topology
+              </p>
+            }
+          >
+            <DiagramEmbed
+              src="/diagrams/c4-full.svg"
+              alt="Hermos platform architecture - full container diagram"
+            />
+          </ContainerScroll>
         </div>
 
         <div className="mt-12">

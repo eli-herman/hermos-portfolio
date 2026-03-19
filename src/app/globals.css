@@ -163,6 +163,20 @@
   animation: card-border-spin 4s linear infinite;
 }
 
+/* ─── Bio card — always-on spinning glow border ────────────────────────── */
+.bio-card-wrap {
+  padding: 1px;
+  border-radius: calc(var(--radius) + 1px);
+  background: conic-gradient(
+    from var(--card-angle),
+    transparent 20%,
+    #E8971A 50%,
+    #F5C060 62%,
+    transparent 80%
+  );
+  animation: card-border-spin 4s linear infinite;
+}
+
 /* ─── CPU Architecture light orb animations ──────────────────────────────── */
 .cpu-architecture {
   offset-rotate: 0deg;
