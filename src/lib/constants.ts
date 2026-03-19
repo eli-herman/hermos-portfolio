@@ -96,8 +96,8 @@ export const NAV_ITEMS = [
 ] as const;
 
 export const SOCIAL_LINKS = {
-  github: 'https://github.com/eli-j-herman',
-  linkedin: 'https://linkedin.com/in/eli-herman',
+  github: 'https://github.com/eli-herman',
+  linkedin: 'https://www.linkedin.com/in/eli-herman254/',
   email: 'mailto:hermos.dev@gmail.com',
 } as const;
 
