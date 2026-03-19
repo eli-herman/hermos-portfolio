@@ -93,6 +93,7 @@ export const NAV_ITEMS = [
   { label: 'Home', href: '/' },
   { label: 'Hermos', href: '/hermos' },
   { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ] as const;
 
 export const SOCIAL_LINKS = {

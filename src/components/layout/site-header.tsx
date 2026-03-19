@@ -58,7 +58,7 @@ export function SiteHeader() {
         {/* Desktop CTA */}
         <div className="hidden md:block">
           <Link
-            href="mailto:hermos.dev@gmail.com"
+            href="/contact"
             className="inline-flex items-center justify-center rounded-full bg-accent hover:bg-accent-hover text-white text-sm font-medium h-8 px-4 transition-colors"
           >
             Get in touch
@@ -99,7 +99,7 @@ export function SiteHeader() {
                 <SheetClose
                   render={
                     <Link
-                      href="mailto:hermos.dev@gmail.com"
+                      href="/contact"
                       className="inline-flex items-center justify-center rounded-full bg-accent hover:bg-accent-hover text-white font-medium h-10 px-5 mt-4 transition-colors"
                     />
                   }
