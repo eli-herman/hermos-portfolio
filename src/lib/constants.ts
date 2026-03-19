@@ -10,14 +10,8 @@ export const TIMELINE_ENTRIES = [
   {
     date: '2022',
     title: 'Baylor MIS',
-    description: 'Started Management Information Systems at Baylor University. First exposure to building systems, not just using them.',
+    description: 'Started Management Information Systems at Baylor University in Waco. The program sits at the intersection of business and technology — databases, systems design, enterprise software.',
     tags: [],
-  },
-  {
-    date: 'Summer 2023',
-    title: 'Financial Analyst Intern',
-    description: 'Data analysis and financial modeling internship. Built tools to automate reporting workflows.',
-    tags: ['Excel', 'Python', 'Data Analysis'],
   },
   {
     date: '2023',
@@ -32,18 +26,6 @@ export const TIMELINE_ENTRIES = [
     description: 'Federal debt visualization with ML-powered forecasting using U.S. Treasury API data and scikit-learn models.',
     tags: ['Python', 'Dash', 'Plotly', 'Scikit-learn'],
     link: 'https://fiscal-dashboard.onrender.com',
-  },
-  {
-    date: '2024',
-    title: 'Market Analysis Tool',
-    description: 'Market comparison engine with TensorFlow-powered predictions for financial instrument analysis.',
-    tags: ['JavaScript', 'Node.js', 'TensorFlow'],
-  },
-  {
-    date: '2024',
-    title: 'Portfolio Optimizer',
-    description: 'Mathematical portfolio optimization using modern portfolio theory. Efficient frontier calculation and risk analysis.',
-    tags: ['Python', 'NumPy', 'SciPy'],
   },
   {
     date: 'Feb 2026',
@@ -71,8 +53,8 @@ export const TIMELINE_ENTRIES = [
   },
   {
     date: 'Next',
-    title: 'First B2B Client',
-    description: 'AI-powered infrastructure consulting. Ship in days what agencies quote in weeks.',
+    title: 'Hermos v2',
+    description: 'Dual-GPU server, Proxmox virtualization, 70B+ parameter local models. More compute, lower latency, broader deployment — the platform extended for multi-client use.',
     tags: [],
   },
 ] as const;
@@ -95,7 +77,7 @@ export const PROJECTS = {
 } as const;
 
 export const SECURITY_AUDIT = {
-  heading: 'Security-audited from day one',
+  heading: 'Security review',
   description: 'Professional 9-phase security assessment. STRIDE threat model. 5 automated scanners. OWASP Top 10 + SANS Top 25 manual review. Every critical finding fixed.',
   stats: [
     { label: 'Findings audited',       value: '59'         },
