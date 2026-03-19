@@ -4,18 +4,26 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
-  const { name, email, message } = await req.json();
+  const { name, email, message, services } = await req.json();
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 });
   }
 
+  const servicesList = Array.isArray(services) && services.length
+    ? services.join(', ')
+    : 'Not specified';
+
+  const subject = Array.isArray(services) && services.length
+    ? `New message from ${name} — ${services.join(', ')}`
+    : `New message from ${name}`;
+
   const { error } = await resend.emails.send({
     from: 'Portfolio Contact <onboarding@resend.dev>',
     to: 'hermos.dev@gmail.com',
     replyTo: email,
-    subject: `New message from ${name}`,
-    text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+    subject,
+    text: `Interested in: ${servicesList}\nName: ${name}\nEmail: ${email}\n\n${message}`,
   });
 
   if (error) {

@@ -5,10 +5,25 @@ import { motion, useReducedMotion } from 'motion/react';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
+const SERVICES = [
+  'AI Infrastructure',
+  'Automation & Workflows',
+  'Web / Full-Stack',
+  'B2B Consulting',
+  'Something Else',
+] as const;
+
 export function ContactForm() {
   const reduced = useReducedMotion();
   const [status, setStatus] = useState<Status>('idle');
+  const [services, setServices] = useState<string[]>([]);
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+
+  function toggleService(s: string) {
+    setServices((prev) =>
+      prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]
+    );
+  }
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -17,33 +32,60 @@ export function ContactForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus('loading');
-
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, services }),
       });
-
-      if (!res.ok) throw new Error('Send failed');
+      if (!res.ok) throw new Error();
       setStatus('success');
       setForm({ name: '', email: '', message: '' });
+      setServices([]);
     } catch {
       setStatus('error');
     }
   }
 
   const inputClass =
-    'w-full bg-[#111] border border-[#2a2a2a] rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-[#555] focus:outline-none focus:border-[#B8790E] transition-colors duration-200';
+    'w-full bg-[#0C1020] border border-[#1E2438] rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-[#5A6480] focus:outline-none focus:border-[#D4921A] transition-colors duration-200';
 
   return (
     <motion.form
       onSubmit={handleSubmit}
-      initial={reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+      initial={reduced ? { opacity: 1 } : { opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: reduced ? 0 : 0.5, delay: 0.1 }}
-      className="flex flex-col gap-4"
+      transition={{ duration: reduced ? 0 : 0.4 }}
+      className="flex flex-col gap-5"
     >
+      {/* Service pills */}
+      <div>
+        <p className="text-xs text-[#5A6480] uppercase tracking-widest mb-3">
+          What are you interested in?
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {SERVICES.map((s) => {
+            const selected = services.includes(s);
+            return (
+              <button
+                key={s}
+                type="button"
+                onClick={() => toggleService(s)}
+                className={[
+                  'px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-150 select-none',
+                  selected
+                    ? 'border-[#D4921A] bg-[rgba(212,146,26,0.12)] text-[#EABD70]'
+                    : 'border-[#1E2438] bg-transparent text-[#5A6480] hover:border-[#D4921A]/50 hover:text-[#A0A8BC]',
+                ].join(' ')}
+              >
+                {s}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Name + Email */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="name" className="sr-only">Name</label>
@@ -73,20 +115,22 @@ export function ContactForm() {
         </div>
       </div>
 
+      {/* Message */}
       <div>
         <label htmlFor="message" className="sr-only">Message</label>
         <textarea
           id="message"
           name="message"
-          placeholder="What are you building?"
+          placeholder="Tell me what you're building."
           required
-          rows={6}
+          rows={5}
           value={form.message}
           onChange={handleChange}
           className={`${inputClass} resize-none`}
         />
       </div>
 
+      {/* Submit */}
       <motion.button
         type="submit"
         disabled={status === 'loading'}
@@ -104,7 +148,7 @@ export function ContactForm() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-sm text-[#B8790E]"
+          className="text-sm text-[#D4921A]"
         >
           Message sent. I&apos;ll get back to you soon.
         </motion.p>
@@ -115,8 +159,11 @@ export function ContactForm() {
           animate={{ opacity: 1 }}
           className="text-sm text-red-400"
         >
-          Something went wrong. Try emailing directly at{' '}
-          <a href="mailto:hermos.dev@gmail.com" className="underline">hermos.dev@gmail.com</a>.
+          Something went wrong. Email me directly at{' '}
+          <a href="mailto:hermos.dev@gmail.com" className="underline">
+            hermos.dev@gmail.com
+          </a>
+          .
         </motion.p>
       )}
     </motion.form>
