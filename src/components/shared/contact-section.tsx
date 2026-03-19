@@ -27,7 +27,7 @@ export function ContactSection() {
       </p>
 
       <div className="mt-8 flex justify-center">
-        <Button3D href={SOCIAL_LINKS.email}>
+        <Button3D href="/contact">
           Let&apos;s talk
         </Button3D>
       </div>

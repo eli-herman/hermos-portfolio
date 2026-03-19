@@ -8,7 +8,7 @@ import { SOCIAL_LINKS } from '@/lib/constants';
 const accessPoints = [
   {
     label: "Let's talk",
-    href: '#contact',
+    href: '/contact',
     variant: 'accent' as const,
     icon: null,
     external: false,

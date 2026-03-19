@@ -108,7 +108,7 @@ export function HeroSection() {
         <motion.div className="flex gap-3 justify-center mt-10" {...fadeUp(0.30)}>
           <MagneticButton>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center justify-center rounded-full min-h-[48px] px-8 text-sm font-semibold text-[#0A0A0A] bg-gradient-to-r from-[#B8790E] via-[#EABD70] to-[#B8790E] hover:via-[#F0D080] transition-all duration-300 shadow-[0_0_24px_rgba(212,146,26,0.40)] hover:shadow-[0_0_36px_rgba(234,189,112,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               Let&apos;s talk
